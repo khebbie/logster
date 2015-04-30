@@ -524,6 +524,14 @@ Handlebars.registerHelper('timeAgo', function(prop, options){
   return new Handlebars.SafeString(formatted);
 });
 
+Handlebars.registerHelper('timeFormatted', function(prop, options){
+  var timestamp = Ember.Handlebars.get(this, prop, options);
+  var parsed = moment(timestamp);
+  var formatted = parsed.format();
+
+  return new Handlebars.SafeString(formatted);
+});
+
 App.TabbedSectionComponent = Ember.Component.extend({
   tabs: Em.A(),
   selectTab: function(view) {
