@@ -3,7 +3,7 @@
     {{#tab-contents name="info" hint="show info" currentMessage=currentMessage}}
       {{#if showTitle}}
       <h3>Message</h3>
-      <span><i>Severity</i>{{currentMessage.severity}}</span><span><i>Timestamp</i>{{currentMessage.timestamp}}</span>
+      <span><i>Severity</i>{{currentMessage.severity}}</span><span><i>Timestamp</i>{{timeFormatted currentMessage.timestamp}}</span>
       {{/if}}
       <pre>{{currentMessage.message}}</pre>
     {{/tab-contents}}
